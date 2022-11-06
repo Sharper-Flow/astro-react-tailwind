@@ -9,5 +9,10 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx(), prefetch(), partytown(), sitemap()]
+  integrations: [tailwind(), react(), mdx(), prefetch(), partytown(), sitemap()],
+  vite: {
+    ssr: {
+      external: ["svgo"],
+    },
+  },
 });
